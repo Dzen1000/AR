@@ -8,21 +8,15 @@
   </head>
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: https://cdn.glitch.global/120c66a3-a6c8-430a-ab47-7c45be19b6b4/targets.mind?v=1677246671329;"
+      mindar-image="imageTargetSrc: targets.mind"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <img
-          id="card"
-          src="https://cdn.glitch.global/120c66a3-a6c8-430a-ab47-7c45be19b6b4/Black%20png%20(1).png?v=1677247174483"
-        />
-        <a-asset-item
-          id="avatarModel"
-          src="https://cdn.glitch.global/120c66a3-a6c8-430a-ab47-7c45be19b6b4/scene.gltf?v=1677247039884"
-        ></a-asset-item>
+        <img id="card" src="logo.png" />
+        <a-asset-item id="avatarModel" src="car/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -35,9 +29,9 @@
           rotation="0 0 0"
         ></a-plane>
         <a-gltf-model
-          rotation="0 0 0 "
+          rotation="90 0 0 "
           position="0 0 0.1"
-          scale="0.005 0.005 0.005"
+          scale="0.7 0.7 0.7"
           src="#avatarModel"
           animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
         ></a-gltf-model>
