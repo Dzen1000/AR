@@ -18,8 +18,10 @@
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item id="avatarModel" src="mr.kash_Retop_ARtest.glb"></a-asset-item>
- 
+        <a-asset-item
+          id="avatarModel"
+          src="mr.kash_Retop_ARtest.glb"
+        ></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -27,11 +29,11 @@
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
           id="model"
-          position="0 0 0"
-          scale="0.25 0.25 0.25"
+          rotation="0 180 0"
+          position="0 -0.35 0"
+          scale="0.27 0.27 0.27"
           src="#avatarModel"
           smooth-movement
-      
         ></a-gltf-model>
       </a-entity>
     </a-scene>
