@@ -2,33 +2,36 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
-    <title>Mr.Kash AR Vitebsk</title>
+
+    <title>Mr.Kash AR</title>
   </head>
+
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: target.mind;"
+      mindar-image="imageTargetSrc: targets.mind; filterMinCF:0.001; filterBeta: 1; missTolerance: 0.1; warmupTolerance: 1;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item
-          id="avatarModel"
-          src="mr.kash_FinalModel_arTEST.glb"
-        ></a-asset-item>
+        <a-asset-item id="avatarModel" src="mr.kash_Retop_ARtest.glb"></a-asset-item>
+ 
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
-          rotation="0 -200 0 "
-          position=" 0  -0.5  0"
+          id="model"
+          position="0 0 0"
           scale="0.25 0.25 0.25"
           src="#avatarModel"
+          smooth-movement
+          animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear"
         ></a-gltf-model>
       </a-entity>
     </a-scene>
